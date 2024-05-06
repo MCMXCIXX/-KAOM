@@ -210,7 +210,7 @@ a {
 }
 
 .promo__item {
-  animation: breed-animation 2s ease infinite;
+  animation: breed-animation 3s ease infinite;
 }
 
 .promo__item:nth-child(even) {
@@ -644,13 +644,13 @@ a {
 }
 @keyframes shake {
   0% {
-    transform: rotate(15deg);
+    transform: rotate(5deg);
   }
   50% {
     transform: rotate(0);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(5deg);
   }
 }
 @keyframes shake-2 {
