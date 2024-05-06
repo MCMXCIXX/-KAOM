@@ -1,0 +1,1046 @@
+@font-face {
+  font-family: "Nanum";
+  src: url("../fonts/Nanum-Pen.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Nanum", cursive;
+  font-size: 64px;
+  color: #fff;
+  background: #2ec3eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  background-image: url(../images/promo-bg.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+  max-width: 1920px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 55px;
+}
+
+.header__nav {
+  max-width: 667px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.buy-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.header__link--buy {
+  position: relative;
+  font-size: 45px;
+  text-transform: uppercase;
+  color: #000;
+  width: 110px;
+  height: 60px;
+  border-radius: 37px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__link--buy::after,
+.header__link--buy::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__link--buy::after {
+  width: 37px;
+  height: 27px;
+  background-image: url(../images/buy-2.svg);
+  left: -20px;
+  bottom: -14px;
+}
+
+.header__link--buy::before {
+  width: 46px;
+  height: 29px;
+  background-image: url(../images/buy-1.svg);
+  right: -25px;
+  top: -20px;
+}
+
+.promo {
+  position: relative;
+  overflow: hidden;
+}
+
+.promo__cat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.promo__cat::after {
+  position: absolute;
+  content: "$KAOM";
+  color: #000;
+  top: 50px;
+  transform: rotate(15deg);
+  left: 42%;
+  font-weight: 400;
+  font-size: 61px;
+}
+
+.promo__cat::before {
+  content: "";
+  position: absolute;
+  width: 188px;
+  height: 118px;
+  top: 12px;
+  left: 50%;
+  background-image: url(../images/cat-item.svg);
+  background-repeat: no-repeat;
+}
+
+.promo__cat-img {
+  transform: translateX(-14%);
+}
+
+.buy-wrapper-cat {
+  display: none;
+}
+
+.promo-cat-stars {
+  display: flex;
+  position: absolute;
+  bottom: 45%;
+  gap: 739px;
+}
+
+.promo__cat-waves {
+  transform: translate(-14%, -120px);
+}
+
+.promo__breed {
+  width: 100%;
+  position: absolute;
+  top: 129px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6%;
+}
+
+.promo__list {
+  width: 525px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-weight: 400;
+  font-size: 58px;
+  opacity: 0.7;
+}
+
+.promo__item {
+  animation: breed-animation 2s ease infinite;
+}
+
+.promo__item:nth-child(even) {
+  text-align: end;
+}
+
+.promo__item:nth-child(1) {
+  padding-left: 50px;
+}
+
+.promo__item:nth-child(5) {
+  padding-left: 150px;
+}
+
+.promo__item:nth-child(6) {
+  padding-right: 40px;
+}
+
+.clouds {
+  position: absolute;
+  bottom: 380px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.clouds__img {
+  animation: clouds 15s linear infinite;
+}
+
+.clouds__img--left {
+  margin-top: -255px;
+}
+
+.about {
+  position: relative;
+}
+
+.about__icon {
+  position: absolute;
+  top: -201px;
+  right: 15%;
+}
+
+.about-wave {
+  position: absolute;
+  left: -150px;
+  animation: about-wave 5s linear infinite;
+}
+
+.square {
+  position: relative;
+  animation: square 3s linear infinite;
+  font-weight: 400;
+  font-size: 64px;
+}
+
+.square-1 {
+  border: 60px solid #fff;
+  transform: rotate(10deg);
+  width: 744px;
+  height: 744px;
+  padding: 92px;
+  left: 50%;
+  background: #2ec3eb;
+}
+
+.about-art {
+  display: none;
+}
+
+.square-1::after,
+.square-1::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  transform: rotate(-10deg);
+}
+
+.square-1::after {
+  width: 89px;
+  height: 380px;
+  background-image: url(../images/square-1-item.svg);
+  right: -150px;
+  top: 200px;
+}
+
+.square-1::before {
+  width: 89px;
+  height: 380px;
+  background-image: url(../images/square-1-item-1.svg);
+  left: -150px;
+  top: 50px;
+}
+
+.square__flower {
+  position: absolute;
+  top: -150px;
+  right: -150px;
+}
+
+.square-2 {
+  border: 50px solid #fff;
+  transform: rotate(10deg);
+  width: 564px;
+  height: 564px;
+  left: 35%;
+  background: #000;
+  padding: 92px 0 0 77px;
+  transform: rotate(-20deg);
+  animation: square-2 4s linear infinite;
+}
+
+.square-2::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 165px;
+  height: 220px;
+  background-image: url(../images/square-2-item.svg);
+  left: -124px;
+  bottom: -100px;
+}
+
+.square__green {
+  color: #3dd424;
+}
+
+.square__blue {
+  color: #2ec3eb;
+}
+
+.square__tag {
+  margin-top: 40px;
+  line-height: 63%;
+  text-transform: uppercase;
+  max-width: 182px;
+  text-align: center;
+  transform: rotate(15deg);
+}
+
+.square__tag::after,
+.square__tag::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.square__tag::after {
+  width: 55px;
+  height: 55px;
+  background-image: url(../images/tag-item-1.svg);
+  top: -15px;
+  right: -60px;
+}
+
+.square__tag::before {
+  width: 55px;
+  height: 55px;
+  background-image: url(../images/tag-item-2.svg);
+  bottom: -6px;
+  left: -33px;
+}
+
+.water-lily {
+  position: relative;
+  left: 61%;
+  top: -451px;
+  z-index: 5;
+}
+
+.about-water-lilly {
+  position: absolute;
+  top: 654px;
+  left: 386px;
+  animation: about-wave 7s linear infinite;
+}
+
+.about-flower {
+  position: absolute;
+  top: 400px;
+  left: 77px;
+}
+
+.about-star {
+  position: absolute;
+  top: 500px;
+  left: 700px;
+}
+
+.crucian {
+  position: absolute;
+}
+
+.crucian-1 {
+  top: 0;
+  left: 420px;
+}
+
+.crucian-2 {
+  bottom: -230px;
+  left: -45px;
+}
+
+.crucian-2__inner {
+  position: relative;
+}
+
+.crucian-2__inner::after,
+.crucian-1__inner::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.crucian-2__inner::after {
+  width: 300px;
+  height: 200px;
+  background-image: url(../images/crucian-2__inner-1.svg);
+  bottom: -84px;
+  left: 0;
+}
+
+.crucian-1__inner::after {
+  background-image: url(../images/crucian-2__inner-2.svg);
+  width: 200px;
+  height: 100px;
+  bottom: 0px;
+  left: 0;
+}
+
+.roadmap {
+  position: relative;
+}
+
+.roadmap-art {
+  position: relative;
+  left: 15%;
+  z-index: 5;
+  animation: shake-2 3s linear infinite;
+}
+
+.roadmap-art::after,
+.roadmap-art::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.roadmap-art::after {
+  width: 120px;
+  height: 150px;
+  left: -62px;
+  top: -38px;
+  background-image: url(../images/roadmap-art-wave-1.svg);
+}
+
+.roadmap-art::before {
+  width: 120px;
+  height: 150px;
+  right: 1028px;
+  bottom: 65px;
+  background-image: url(../images/roadmap-art-wave-2.svg);
+}
+
+.square-3 {
+  position: absolute;
+  left: 53%;
+  top: 300px;
+  border: 43px solid #fff;
+  background: #000;
+  padding: 70px;
+  width: 564px;
+  height: 564px;
+  animation: shake 2s linear infinite;
+}
+
+.square__title {
+  font-size: 64px;
+}
+
+.square-3 .square__text {
+  font-size: 30px;
+}
+
+.clouds--roadmap {
+  z-index: -5;
+}
+
+.roadmap-flowers {
+  position: absolute;
+  top: -500px;
+  left: 100px;
+  z-index: 6;
+  animation: about-wave 6s linear infinite;
+}
+
+.roadmap-flowers__inner {
+  position: relative;
+}
+
+.roadmap-flowers__inner::after {
+  position: absolute;
+  content: "";
+  width: 350px;
+  height: 200px;
+  left: 114px;
+  top: 196px;
+  background-image: url(../images/flowers-wave.svg);
+  background-repeat: no-repeat;
+}
+
+.roadmap-icon {
+  position: absolute;
+  top: -300px;
+  right: 40%;
+}
+
+.clouds--roadmap .clouds__img--left {
+  margin-top: -757px;
+}
+
+.roadmap-hand {
+  position: absolute;
+  right: -195px;
+  top: 500px;
+  animation: hand 5s linear infinite;
+}
+
+.roadmap__title {
+  font-weight: 400;
+  font-size: 91px;
+  text-align: center;
+  margin-top: 54px;
+}
+
+.roadmap-nav {
+  display: flex;
+  justify-content: center;
+  gap: 43px;
+  margin: 40px 0 77px 0;
+}
+
+.square-3-buy {
+  transform: rotate(-15deg);
+  position: absolute;
+  right: -42px;
+  bottom: -37px;
+}
+
+.roadmap-flower {
+  position: absolute;
+  bottom: -45px;
+  right: 25px;
+  animation: about-wave 6s linear infinite;
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes breed-animation {
+  0% {
+    font-size: 50px;
+  }
+  50% {
+    font-size: 65px;
+  }
+  100% {
+    font-size: 50px;
+  }
+}
+@keyframes breed-animation-mini {
+  0% {
+    font-size: 30px;
+  }
+  50% {
+    font-size: 38px;
+  }
+  100% {
+    font-size: 30px;
+  }
+}
+@keyframes square {
+  0% {
+    transform: translateY(15px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(15px) rotate(10deg);
+  }
+}
+@keyframes square-2 {
+  0% {
+    transform: translateY(15px) rotate(-20deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(-20deg);
+  }
+  100% {
+    transform: translateY(15px) rotate(-20deg);
+  }
+}
+@keyframes about-wave {
+  0% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+@keyframes hand {
+  0% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes shake-2 {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+@media (max-width: 1683px) {
+  .promo__cat::after {
+    left: 39%;
+  }
+  .promo__cat::before {
+    left: 51%;
+  }
+  .square-2 {
+    left: 22%;
+    width: 464px;
+    height: 464px;
+  }
+  .square-1 {
+    left: 26%;
+    width: 544px;
+    height: 544px;
+    padding: 55px;
+  }
+  .square {
+    font-size: 42px;
+  }
+  .water-lily {
+    max-width: 274px;
+  }
+  .water-lily__img {
+    width: 100%;
+  }
+  .crucian__img {
+    max-width: 253px;
+  }
+  .crucian-1 {
+    top: -162px;
+    left: 123px;
+    transform: rotate(-45deg);
+  }
+  .crucian-2 {
+    bottom: -123px;
+    left: 100px;
+  }
+  .roadmap-art img {
+    width: 500px;
+  }
+  .square-3 {
+    width: 450px;
+    height: 450px;
+    right: 15%;
+    top: 81px;
+    padding: 30px;
+    border: 20px solid #fff;
+  }
+  .roadmap-flowers {
+    top: -303px;
+  }
+  .roadmap-flowers img {
+    width: 450px;
+  }
+  .crucian-2__inner::after {
+    display: none;
+  }
+  .crucian-1__inner::after {
+    display: none;
+  }
+  .roadmap-flowers__inner::after {
+    display: none;
+  }
+  .roadmap-art::after {
+    display: none;
+  }
+  .roadmap-art::before {
+    display: none;
+  }
+}
+@media (max-width: 1240px) {
+  .roadmap-art img {
+    width: 400px;
+  }
+  .square-3 {
+    width: 350px;
+    height: 350px;
+    right: 15%;
+    top: 81px;
+    padding: 10px;
+  }
+  .square-3 .square__text {
+    font-size: 20px;
+  }
+  .roadmap-flowers {
+    top: -203px;
+  }
+  .roadmap-flowers img {
+    width: 450px;
+  }
+  .roadmap-hand {
+    display: none;
+    top: 200px;
+  }
+  .roadmap-hand img {
+    width: 500px;
+  }
+  .roadmap__title {
+    font-size: 44px;
+  }
+  .roadmap-nav {
+    align-items: center;
+    font-size: 24px;
+  }
+  .roadmap-icon {
+    position: absolute;
+    top: -186px;
+    right: 0%;
+  }
+  .square-3-buy img {
+    width: 200px;
+    right: -7px;
+    bottom: -5px;
+  }
+  .roadmap-flower {
+    right: -76px;
+  }
+  .roadmap-flower img {
+    width: 172px;
+  }
+}
+@media (max-width: 920px) {
+  .roadmap-art {
+    left: 20%;
+  }
+  .square-3 {
+    left: 59%;
+  }
+  .roadmap-flowers img {
+    width: 350px;
+  }
+  .square-3 {
+    position: relative;
+    top: -100px;
+    z-index: 6;
+    left: 24%;
+  }
+  .clouds--roadmap {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .promo__cat-waves {
+    display: none;
+  }
+  .promo__cat::after {
+    left: 28%;
+  }
+  .promo__cat::before {
+    left: 51%;
+  }
+  .promo__cat-img {
+    max-width: 600px;
+    margin-top: 126px;
+  }
+  .buy-wrapper {
+    display: none;
+  }
+  .buy-wrapper-cat {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    z-index: 5;
+  }
+  .cat-buy {
+    background: #86e5ff;
+  }
+  .header__link--buy::after {
+    background-image: url(../images/buy-blue-1.svg);
+  }
+  .header__link--buy::before {
+    background-image: url(../images/buy-blue-2.svg);
+  }
+  .header__nav {
+    justify-content: center;
+    gap: 36px;
+  }
+  .clouds {
+    top: 60%;
+  }
+  .square-1 {
+    left: 15%;
+    width: 285px;
+    height: 285px;
+    border: 23px solid #fff;
+    padding: 35px;
+  }
+  .square-1::before,
+  .square-1::after {
+    display: none;
+  }
+  .about-art {
+    display: flex;
+    width: 400px;
+    height: 512px;
+    margin: 0 auto;
+  }
+  .about-art img {
+    width: 100%;
+  }
+  .square {
+    font-size: 24px;
+  }
+  .square-2 {
+    width: 310px;
+    height: 310px;
+    left: 15%;
+    border: 23px solid #fff;
+    font-size: 35px;
+    padding: 35px;
+  }
+  .square__flower {
+    top: -50px;
+    right: -50px;
+  }
+  .square__flower img {
+    width: 105px;
+  }
+  .water-lily {
+    max-width: 274px;
+  }
+  .water-lily__img {
+    width: 100%;
+  }
+  .crucian__img {
+    max-width: 253px;
+  }
+  .crucian-1 {
+    top: -162px;
+    left: 123px;
+    transform: rotate(-45deg);
+  }
+  .crucian-2 {
+    bottom: -123px;
+    left: 100px;
+  }
+  .about-water-lilly img {
+    width: 100%;
+  }
+  .about-water-lilly {
+    width: 140px;
+    top: 732px;
+    left: 50px;
+  }
+  .square__tag {
+    max-width: 100px;
+  }
+  .square__tag::before {
+    bottom: -14px;
+    left: -37px;
+  }
+  .square-2::before {
+    display: none;
+  }
+  .water-lily {
+    position: relative;
+    left: 28%;
+    top: unset;
+    bottom: 0;
+    z-index: -5;
+  }
+  .about__icon {
+    position: absolute;
+    top: -5px;
+    right: 15%;
+  }
+  .roadmap {
+    padding-top: 100px;
+  }
+  .roadmap-flowers img {
+    width: 287px;
+  }
+  .roadmap-flowers {
+    top: -32px;
+    left: -28px;
+    transform: scale(-1, 1) rotate(180deg);
+  }
+  .roadmap__title {
+    margin: 0;
+  }
+  .roadmap-nav {
+    margin: 10px 0 20px 0;
+  }
+  .square__title {
+    font-size: 45px;
+  }
+  .roadmap-icon {
+    top: -115px;
+    right: -32px;
+  }
+  .roadmap-icon img {
+    width: 150px;
+  }
+  .roadmap-art {
+    left: 4%;
+  }
+  .square-3 {
+    left: 9%;
+  }
+}
+@media (max-width: 425px) {
+  .promo__cat::after {
+    left: 20px;
+  }
+  .promo__cat::before {
+    left: 163px;
+  }
+  .promo__cat-img {
+    width: 410px;
+  }
+  .promo__item {
+    text-wrap: nowrap;
+    animation: breed-animation-mini 2s ease infinite;
+  }
+  .promo__list {
+    width: 325px;
+    gap: 9px;
+  }
+  .promo__breed {
+    padding: 55px 0;
+  }
+  .promo__item:nth-child(1) {
+    padding-left: 20px;
+  }
+  .promo__item:nth-child(5) {
+    padding-left: 70px;
+  }
+  .promo__item:nth-child(6) {
+    padding-right: 20px;
+  }
+  .clouds__img--left {
+    margin-top: -100px;
+  }
+  .about-flower {
+    display: none;
+  }
+  .water-lily {
+    width: 250px;
+    left: 10%;
+    bottom: -57px;
+  }
+  .crucian {
+    width: 145px;
+  }
+  .about__icon {
+    position: none;
+    top: -5px;
+    right: 15%;
+  }
+  .roadmap {
+    padding-top: 250px;
+  }
+  .roadmap-flowers {
+    top: 100px;
+  }
+  .square-3 {
+    left: 1%;
+    top: -25px;
+  }
+  .roadmap-art {
+    left: 1%;
+  }
+  .nav__item {
+    display: block;
+    width: 320px;
+    text-align: center;
+  }
+  .nav__item span {
+    display: block;
+  }
+  .roadmap-nav {
+    flex-wrap: wrap;
+  }
+  .roadmap-flower {
+    right: -86px;
+    bottom: 50px;
+  }
+}/*# sourceMappingURL=style.css.map */
